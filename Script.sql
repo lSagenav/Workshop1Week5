@@ -301,3 +301,41 @@ values
 
 
 
+-- borrados logicos y fisicos 
+-- --------------------------------------------------------------------
+-- 3 BORRADOS LOGICOS Y 3 BORRADOS FISICOS EN LA TABLA DE VENTAS
+-- --------------------------------------------------------------------
+
+UPDATE Sale SET anullation_date  = "2026-10-16" WHERE id_Sale = 9;
+UPDATE Sale SET anullation_date  = "2046-11-22" WHERE id_Sale = 6;
+UPDATE product SET anullation_date  = 'Arroz_seco' WHERE id_Product = 6;
+
+DELETE FROM Sale WHERE id_Sale=8; 
+DELETE FROM Sale WHERE id_Sale=2; 
+DELETE FROM Saller WHERE id_Saller=4; 
+
+-- --------------------------------------------------------------------------------------------------------------------------
+-- 3 MODIFICACIONES EN EL NOMBRE DEL PRODUCTO Y NOMBRE DEL PROVEEDOR
+-- --------------------------------------------------------------------------------------------------------------------------
+
+UPDATE product SET name_product = "Popetas", name_Supplier = "Popetas", update_product = "2020-09-06" WHERE id_product = 1;
+UPDATE product SET name_product = "Crispetas", name_Supplier = "Popcom", update_product = "2020-09-06" WHERE id_product = 2;
+UPDATE product SET name_product = "Masorca", name_Supplier = "Campo", update_product = "2020-09-06" WHERE id_product = 3;
+UPDATE product SET name_product = "Pollo", name_Supplier = "Granjas El Pollon", update_product = "2020-09-06" WHERE id_product = 6;
+
+
+
+-- ---------------------
+-- 2 script
+-- ---------------------
+
+-------------------------------------------------------------------------------------------------------------------
+-- 1 Consulta SQL donde pueda obtener los productos vendidos digitando tipo de documento y número de documento.
+-- ----------------------------------------------------------------------------------------------------------------
+ SELECT name_product, price_product, category_product FROM product WHERE Sale_id_produ in ( SELECT Sale_id_cus FROM custumer WHERE type_document_cus = "CE" AND number_document_cus = "MX65347");
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- 2 Consultar productos por medio del nombre, el cual debe mostrar quien o quienes han sido sus proveedores.
+-------------------------------------------------------------------------------------------------------------------
