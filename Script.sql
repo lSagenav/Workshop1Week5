@@ -339,3 +339,4 @@ UPDATE product SET name_product = "Pollo", name_Supplier = "Granjas El Pollon", 
 -- ----------------------------------------------------------------------------------------------------------------
 -- 2 Consultar productos por medio del nombre, el cual debe mostrar quien o quienes han sido sus proveedores.
 -------------------------------------------------------------------------------------------------------------------
+ SELECT name_Supplier FROM product WHERE name_product = "Pollo"
