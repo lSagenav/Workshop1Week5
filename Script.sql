@@ -1,12 +1,10 @@
+-- -----------------------------------------
 -- creacion de las tablas y la base de datos 
+-- -----------------------------------------
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema mydbb
--- -----------------------------------------------------
 
 -- -----------------------------------------------------
 -- Schema mydbb
@@ -221,3 +219,85 @@ ENGINE = InnoDB;
 #SET SQL_MODE=@OLD_SQL_MODE;
 #SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 #SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+-- --------------------------------------------------------------------
+-- INSERCIÓN DE LOS DATOS EN LAS RESPECTIVAS TABLAS 
+-- --------------------------------------------------------------------
+
+insert into product(Sale_id_produ,name_product,ordered_product,category_product,name_Supplier,price_product, creat_at_product)
+values
+  ("11","Maiz Pira",7,"Grano", "MacDonal",2500,"2020-09-5"),
+  ("12","Galletas",78,"Galletas next","MacDonal",3500,"2006-01-27"),
+  ("12","Galletas Ducales",7,"Galletas","MacDonal",3500,"2006-01-27"),
+  ("12","Panela x6",9,"Energeticos","MacDonal",4200,"2019-06-1"),
+  ("15","Salchichón de Pollo",15,"Embutido","MacDonal",6500,"2001-08-2"),
+  ("16","Arroz",45,"Grano","MacDonal",2400,"2001-02-5"),
+  ("17","Lentejas",41,"Grano","MacDonal",1800,"2003-11-8"),
+  ("18","Garbanzos",12,"Grano","MacDonal",1600,"2003-06-17"),
+  ("19","Frijol",23,"Grano","MacDonal",7000,"2015-04-12"),
+  ("20","Coca Cola",7,"Gaseosa","MacDonal",6000,"2004-02-17");
+  
+  
+
+ 
+insert into supplier( type_document_sup, name_sup, number_document_sup,number_phone,E_mail, create_at_sup)
+ values
+ ("CC" , "Felipe" , "2347625","3132584759","felipe@gmail.com", "2015-05-15"),
+ ("CC" , "Pedro" ,"2458625","31125897456","pedro@gmail.com", "2015-05-15"),
+ ("CC" , "Jose" ,"23694125","3201589634","jose@gmail.com", "2015-05-15"),
+ ("CC" , "Andres" ,"248526625","3215896547","andres@gmail.com", "2015-05-15"),
+ ("CC" , "Camilo" ,"23942345","3221589874","camilo@gmail.com", "2015-05-15"),
+ ("CC" , "Zack" ,"23287852","3114589632","zack@gmail.com", "2015-05-15"),
+ ("CC" , "Camila" ,"23478235","3131478526","camila@gmail.com", "2015-05-15"),
+ ("CC" , "Katerine" ,"2554225","3114587596","katerine@gmail.com", "2015-05-15"),
+ ("CC" , "Alejandro" ,"92532625","3234589746","alejandro@gmail.com", "2015-05-15"),
+ ("CC" , "Sazuke" ,"2452698","3214589746","sazuke@gmail.com", "2015-05-15"),
+ ("CC" , "Itachi" ,"45295225","3221597463","itachi@gmail.com", "2015-05-15"),
+ ("CC" , "Sunade" ,"124596358","3201478239","sunade@gmail.com", "2015-05-15"),
+ ("CC" , "Kakashi" ,"7845292","3217458960","kakashi@gmail.com", "2015-05-15"),
+ ("CC" , "Shikamaru" ,"237859625","3214569870","shikamaru@gmail.com", "2015-05-15");
+ 
+ insert into custumer(Sale_id_cus, type_document_cus, number_document_cus, create_at_cus)
+ values  
+ ("11","CC" , "234765" , "2016-11-20"),
+ ("12","CE" , "MX65347" , "2036-10-30"),
+ ("13","CC" , "2847625" , "2016-11-29"),
+ ("14","CC" , "235347" , "2006-05-28"),
+ ("15","CC" , "2346253" , "2016-01-24"),
+ ("16","CC" , "8678463" , "2046-11-21"),
+ ("17","CE" , "FR764325" , "2006-08-10"),
+ ("18","CC" , "934347" , "2036-09-04"),
+ ("19","CC" , "9756486" , "2026-10-15"),
+ ("20","CE" , "P754547" , "2016-12-21");
+
+
+insert into sale (Saller_id_Saller,type_product_sale,  create_sale )
+values
+(  1 , "Arina"," 2016-11-20"),
+(  2 , "Pan"," 2036-10-30"),
+(  3 , "Platano"," 2016-11-29"),
+(  4 , "Galletas"," 2006-05-28"),
+(  5 , "Papa"," 2016-01-24"),
+(  6 , "Limpido"," 2046-11-21"),
+(  7 , "Vive100"," 2006-08-10"),
+(  8 , "Fab"," 2036-09-04"),
+(  9 , "Panela"," 2026-10-15"),
+(  10 , "Limones"," 2016-12-21");
+
+insert into saller (Saller_id_Saller, type_document_sell, number_document_sell,name_sell , creat_at_sell )
+values 
+(11,"CC" , "12485269" ,"Felipe", "2016-11-20" ),
+(12,"CC" , "12448529" , "Pedro","2036-10-30" ),
+(13,"CC" ,  "124485269" , "Juan","2016-11-29" ),
+(14,"CC" ,  "14485269" , "Camila","2006-05-28" ),
+(15,"CC" ,  "12485269" , "Jose","2016-01-24" ),
+(16,"CC" ,  "12448526" , "Andres","2046-11-21" ),
+(17,"CC" ,  "1244869" , "Kakashi","2006-08-10" ),
+(18,"CC" ,  "12445269" , "Sasuke","2036-09-04" ),
+(19,"CC" ,  "1241485269" , "Sunade","2026-10-15" ),
+(20,"CC" ,  "12441269" , "Inoji","2016-12-21" );
+
+
+
